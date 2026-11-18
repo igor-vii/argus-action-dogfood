@@ -1,0 +1,14 @@
+name: argus-dogfood
+on:
+  workflow_dispatch:
+permissions:
+  checks: write
+jobs:
+  battery:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Argus battery (x402-core)
+        uses: igor-vii/argus-action@v1
+        with:
+          api-key: ${{ secrets.ARGUS_API_KEY }}
+          battery-id: x402-core
